@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ff886c6d6ecfcdded262927e7ac0e42b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 30px; left: 30px; width: 250px; height: 130px; 
+            border:2px solid grey; z-index:9999; font-size:14px;
+            background-color: white; padding: 10px;">
+<b>Legenda - Tipo de Instituição</b><br>
+<i class="fa fa-university fa-2x" style="color:red"></i>&nbsp;ETEC + IFSP<br>
+<i class="fa fa-university fa-2x" style="color:green"></i>&nbsp;Somente IFSP<br>
+<i class="fa fa-university fa-2x" style="color:blue"></i>&nbsp;Somente ETEC<br>
+</div>
+    
+            <div class="folium-map" id="map_ff886c6d6ecfcdded262927e7ac0e42b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ff886c6d6ecfcdded262927e7ac0e42b = L.map(
+                "map_ff886c6d6ecfcdded262927e7ac0e42b",
+                {
+                    center: [-23.5226, -47.1357],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9569a0390511c60d0ab746b087342114 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var marker_09186eed67f3c3196ec48fe3013e2b09 = L.marker(
+                [-23.5226, -47.1357],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_f33134d6458386762d4de168ad5e2f3b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_09186eed67f3c3196ec48fe3013e2b09.setIcon(icon_f33134d6458386762d4de168ad5e2f3b);
+        
+    
+        var popup_e56223e1260d3e3a0ab25caf0449e60e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e443baddadd2a1be1a84084d69761280 = $(`<div id="html_e443baddadd2a1be1a84084d69761280" style="width: 100.0%; height: 100.0%;">São Roque (ETEC + IFSP)</div>`)[0];
+            popup_e56223e1260d3e3a0ab25caf0449e60e.setContent(html_e443baddadd2a1be1a84084d69761280);
+        
+
+        marker_09186eed67f3c3196ec48fe3013e2b09.bindPopup(popup_e56223e1260d3e3a0ab25caf0449e60e)
+        ;
+
+        
+    
+    
+            var marker_18cfae7880a8b98e8a7d0099a85a201a = L.marker(
+                [-23.5453, -47.1857],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_028fb9ceddaf439253af7088fc570e21 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_18cfae7880a8b98e8a7d0099a85a201a.setIcon(icon_028fb9ceddaf439253af7088fc570e21);
+        
+    
+        var popup_8dae89709e6ee996e13a708f7f31a780 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6a1a67e3d8f1800afcc97f7d794957a9 = $(`<div id="html_6a1a67e3d8f1800afcc97f7d794957a9" style="width: 100.0%; height: 100.0%;">Mairinque (ETEC)</div>`)[0];
+            popup_8dae89709e6ee996e13a708f7f31a780.setContent(html_6a1a67e3d8f1800afcc97f7d794957a9);
+        
+
+        marker_18cfae7880a8b98e8a7d0099a85a201a.bindPopup(popup_8dae89709e6ee996e13a708f7f31a780)
+        ;
+
+        
+    
+    
+            var poly_line_14fcda995385e7b0c95142de023ad99e = L.polyline(
+                [[-23.5226, -47.1357], [-23.5453, -47.1857]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var marker_355e40d647099aa71d5d5b05a3dc4e44 = L.marker(
+                [-23.6574, -47.2222],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_ad2ff6ab7294f1c36f719b98391e6a74 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_355e40d647099aa71d5d5b05a3dc4e44.setIcon(icon_ad2ff6ab7294f1c36f719b98391e6a74);
+        
+    
+        var popup_246f1863c02f2d79dcf38e1679fde49a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bd21f4a59736fa8cda1ce3a6bb9ed19c = $(`<div id="html_bd21f4a59736fa8cda1ce3a6bb9ed19c" style="width: 100.0%; height: 100.0%;">Ibiúna (ETEC)</div>`)[0];
+            popup_246f1863c02f2d79dcf38e1679fde49a.setContent(html_bd21f4a59736fa8cda1ce3a6bb9ed19c);
+        
+
+        marker_355e40d647099aa71d5d5b05a3dc4e44.bindPopup(popup_246f1863c02f2d79dcf38e1679fde49a)
+        ;
+
+        
+    
+    
+            var poly_line_bc94f9cee234ea8721f8e9b051427f63 = L.polyline(
+                [[-23.5226, -47.1357], [-23.6574, -47.2222]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var marker_34d61d1667ce35492e8e22d82535e089 = L.marker(
+                [-23.5515, -46.9342],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_af1def51ee3e694ad8275e4d9b7ca7e3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_34d61d1667ce35492e8e22d82535e089.setIcon(icon_af1def51ee3e694ad8275e4d9b7ca7e3);
+        
+    
+        var popup_54e51dd314e81fe0dec2c3f09e08548c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_de673994513312604e26695cc79d244d = $(`<div id="html_de673994513312604e26695cc79d244d" style="width: 100.0%; height: 100.0%;">Itapevi (ETEC)</div>`)[0];
+            popup_54e51dd314e81fe0dec2c3f09e08548c.setContent(html_de673994513312604e26695cc79d244d);
+        
+
+        marker_34d61d1667ce35492e8e22d82535e089.bindPopup(popup_54e51dd314e81fe0dec2c3f09e08548c)
+        ;
+
+        
+    
+    
+            var poly_line_1ef905e6476f676ef773f0510e6da020 = L.polyline(
+                [[-23.5226, -47.1357], [-23.5515, -46.9342]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var marker_247c473ac266fc22dd1f0ebce256e9c1 = L.marker(
+                [-23.602, -46.919],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_41f7d7483b27ade59827d611ac294a9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_247c473ac266fc22dd1f0ebce256e9c1.setIcon(icon_41f7d7483b27ade59827d611ac294a9a);
+        
+    
+        var popup_3175c0b760adade7f3a341b0d2e9be45 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5618915accd8f2d8276c645e5ac42d32 = $(`<div id="html_5618915accd8f2d8276c645e5ac42d32" style="width: 100.0%; height: 100.0%;">Cotia (ETEC)</div>`)[0];
+            popup_3175c0b760adade7f3a341b0d2e9be45.setContent(html_5618915accd8f2d8276c645e5ac42d32);
+        
+
+        marker_247c473ac266fc22dd1f0ebce256e9c1.bindPopup(popup_3175c0b760adade7f3a341b0d2e9be45)
+        ;
+
+        
+    
+    
+            var poly_line_19feb69198a3b02c7504b895db0173b1 = L.polyline(
+                [[-23.5226, -47.1357], [-23.602, -46.919]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var marker_bd8c86dfb0ba56172e5d042385084c67 = L.marker(
+                [-23.5273, -46.9028],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_f969263792adbefbac98d5611fcaa8df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_bd8c86dfb0ba56172e5d042385084c67.setIcon(icon_f969263792adbefbac98d5611fcaa8df);
+        
+    
+        var popup_e1e130a0ae1cfd63506d7ca191e11884 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_53c7b9deb5b6ed6c514adb8421ff0af5 = $(`<div id="html_53c7b9deb5b6ed6c514adb8421ff0af5" style="width: 100.0%; height: 100.0%;">Jandira (ETEC)</div>`)[0];
+            popup_e1e130a0ae1cfd63506d7ca191e11884.setContent(html_53c7b9deb5b6ed6c514adb8421ff0af5);
+        
+
+        marker_bd8c86dfb0ba56172e5d042385084c67.bindPopup(popup_e1e130a0ae1cfd63506d7ca191e11884)
+        ;
+
+        
+    
+    
+            var poly_line_470db82edf04c4e7fdb7c36bb64c6e41 = L.polyline(
+                [[-23.5226, -47.1357], [-23.5273, -46.9028]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var marker_2296bc58015bf74a349e4500c9912d5e = L.marker(
+                [-23.4435, -46.9174],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_ffd1deacdc48808a74beb3487f601bd2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2296bc58015bf74a349e4500c9912d5e.setIcon(icon_ffd1deacdc48808a74beb3487f601bd2);
+        
+    
+        var popup_6d105096774f3e01d875caee05530da6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1b7dc00abcdde2ea5af747faea50370e = $(`<div id="html_1b7dc00abcdde2ea5af747faea50370e" style="width: 100.0%; height: 100.0%;">Santana de Parnaíba (2x ETEC)</div>`)[0];
+            popup_6d105096774f3e01d875caee05530da6.setContent(html_1b7dc00abcdde2ea5af747faea50370e);
+        
+
+        marker_2296bc58015bf74a349e4500c9912d5e.bindPopup(popup_6d105096774f3e01d875caee05530da6)
+        ;
+
+        
+    
+    
+            var poly_line_b3c21615d9b56bbfb3ec271d59d13726 = L.polyline(
+                [[-23.5226, -47.1357], [-23.4435, -46.9174]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var marker_99ae3a374543d6df8419d5a2b44114d7 = L.marker(
+                [-23.3053, -47.1367],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_3a109cda4f6723cf4597a6665d358daf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_99ae3a374543d6df8419d5a2b44114d7.setIcon(icon_3a109cda4f6723cf4597a6665d358daf);
+        
+    
+        var popup_a28d3043bf4a696f993526781e5ae0d0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a4d1c1388b840027f9336767f2f3cc6e = $(`<div id="html_a4d1c1388b840027f9336767f2f3cc6e" style="width: 100.0%; height: 100.0%;">Cabreúva (ETEC)</div>`)[0];
+            popup_a28d3043bf4a696f993526781e5ae0d0.setContent(html_a4d1c1388b840027f9336767f2f3cc6e);
+        
+
+        marker_99ae3a374543d6df8419d5a2b44114d7.bindPopup(popup_a28d3043bf4a696f993526781e5ae0d0)
+        ;
+
+        
+    
+    
+            var poly_line_366c724451bc980721807aa30681a646 = L.polyline(
+                [[-23.5226, -47.1357], [-23.3053, -47.1367]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var marker_c136f878860e09ea18a7e2c7b4b0e166 = L.marker(
+                [-23.5015, -47.4581],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_d99f9aad4050cfa9ef40e2b823adde77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_c136f878860e09ea18a7e2c7b4b0e166.setIcon(icon_d99f9aad4050cfa9ef40e2b823adde77);
+        
+    
+        var popup_0762d64c1c75c380ec8465ddccfcc51c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aaa70a3e1b471bb4d5ee5af2dfc08bd5 = $(`<div id="html_aaa70a3e1b471bb4d5ee5af2dfc08bd5" style="width: 100.0%; height: 100.0%;">Sorocaba (4x ETEC + IFSP)</div>`)[0];
+            popup_0762d64c1c75c380ec8465ddccfcc51c.setContent(html_aaa70a3e1b471bb4d5ee5af2dfc08bd5);
+        
+
+        marker_c136f878860e09ea18a7e2c7b4b0e166.bindPopup(popup_0762d64c1c75c380ec8465ddccfcc51c)
+        ;
+
+        
+    
+    
+            var poly_line_51e2e947bbbff94fe6d2fa31ae574170 = L.polyline(
+                [[-23.5226, -47.1357], [-23.5015, -47.4581]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var marker_d9c7a503a513201f3ae3cd6488c6a585 = L.marker(
+                [-23.2009, -47.2923],
+                {}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var icon_71816764b57ba1053a19338317a15cf7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_d9c7a503a513201f3ae3cd6488c6a585.setIcon(icon_71816764b57ba1053a19338317a15cf7);
+        
+    
+        var popup_e9007266e8aaac8354f51b5b6bedfbc7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b2abe51594664309018d04782245f61f = $(`<div id="html_b2abe51594664309018d04782245f61f" style="width: 100.0%; height: 100.0%;">Salto (IFSP)</div>`)[0];
+            popup_e9007266e8aaac8354f51b5b6bedfbc7.setContent(html_b2abe51594664309018d04782245f61f);
+        
+
+        marker_d9c7a503a513201f3ae3cd6488c6a585.bindPopup(popup_e9007266e8aaac8354f51b5b6bedfbc7)
+        ;
+
+        
+    
+    
+            var poly_line_3f1c5087346e3d9ae82aa4dca07c8339 = L.polyline(
+                [[-23.5226, -47.1357], [-23.2009, -47.2923]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+            var circle_marker_715cd6d7e92ab758b2f6e2ad3c8345e0 = L.circleMarker(
+                [-23.5226, -47.1357],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_ff886c6d6ecfcdded262927e7ac0e42b);
+        
+    
+        var popup_a617a5811f6ad6a3521f1908244500d0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3e561b2d57896ed075d54486b1a01f28 = $(`<div id="html_3e561b2d57896ed075d54486b1a01f28" style="width: 100.0%; height: 100.0%;">São Roque - Cidade Principal</div>`)[0];
+            popup_a617a5811f6ad6a3521f1908244500d0.setContent(html_3e561b2d57896ed075d54486b1a01f28);
+        
+
+        circle_marker_715cd6d7e92ab758b2f6e2ad3c8345e0.bindPopup(popup_a617a5811f6ad6a3521f1908244500d0)
+        ;
+
+        
+    
+</script>
+</html>
